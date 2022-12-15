@@ -15,6 +15,7 @@ let activeCellY
 let isGenerating
 let path
 let gameOver = false
+let textHeight
 
 function setup() {
     let smallSide = Math.min(windowWidth, windowHeight * 0.94)
@@ -23,6 +24,10 @@ function setup() {
     let myCanvas = createCanvas(canvasX, canvasY)
     myCanvas.parent("#canvas")
     backgroundColor = window.getComputedStyle(document.getElementById("canvas")).getPropertyValue('background-color')
+    
+	
+    textHeight = 0.05 * min(canvasX, canvasY)
+    
     setupGrid()
 }
 
@@ -116,7 +121,16 @@ function draw() {
         } else if (activeCellX == endingCellX && activeCellY == endingCellY) {
             gameOver = true
 			window.open("https://westernkiwi.github.io/Mind_Palace/","_self")
-        }
+        } else {
+			push()
+			fill(color(100, 100, 100))
+			textSize(textHeight)
+			stroke(0)
+			strokeWeight(5)
+			textAlign(CENTER)
+			textFont("courier")
+			text("Navigate my muddled thoughts.\nThere is light at the end!", canvasX / 2, canvasY - textHeight / 2 * 3)
+			pop()
     }
 }
 
