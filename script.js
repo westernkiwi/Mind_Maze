@@ -131,6 +131,7 @@ function draw() {
 			textFont("courier")
 			text("Navigate my muddled thoughts.\nThere is light at the end!", canvasX / 2, canvasY - textHeight / 2 * 3)
 			pop()
+	}
     }
 }
 
