@@ -115,7 +115,7 @@ function draw() {
             makeNextMove()
         } else if (activeCellX == endingCellX && activeCellY == endingCellY) {
             gameOver = true
-			window.open("https://www.google.com/","_self")
+			window.open("https://westernkiwi.github.io/Mind_Palace/","_self")
         }
     }
 }
